@@ -12,7 +12,10 @@ def home(request):
     else:
         last_connection_time = datetime.datetime.now()
         visit = Visit()
-    visit.http_user_agent = request.META['HTTP_USER_AGENT']
+    try:
+        visit.http_user_agent = request.META['HTTP_USER_AGENT']
+    except KeyError:
+        visit.http_user_agent = 'no HTTP_USER_AGENT'
     visit.remote_addr = request.META['REMOTE_ADDR']
     last_visit_connection = datetime.datetime.now()
     visit.last_visit = last_visit_connection

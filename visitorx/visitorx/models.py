@@ -14,8 +14,8 @@ class Visit(models.Model):
     ordering = ['-id', ]
 
     def __repr__(self):
-        return _("<Visit #%s> ") % (self.id, )
+        return _("<Visit #%s>") % (self.id, )
 
     def __str__(self):
-        return _("<Visit #%s> ") % (self.id, )
+        return _("<Visit #%s>") % (self.id, )
 

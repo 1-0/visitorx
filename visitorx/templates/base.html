@@ -35,11 +35,26 @@
                     last_connection_time = {{ last_connection_time }}
                 {% else %}
                     no last_connection_time
-
+                {% endif %}
+            </h2>
+            <h2>
+                {% if remote_addr %}
+                    remote_addr_count = {{ remote_addr }}
+                {% endif %}
+            </h2>
+            <h2>
+                {% if http_user_agent %}
+                    http_user_agent_count = {{ http_user_agent }}
+                {% endif %}
+            </h2>
+            <h2>
+                {% if visits_count %}
+                    visits_count = {{ visits_count }}
                 {% endif %}
             </h2>
         </div>
         {% endblock %}
     </body>
 </html>
+
 

@@ -1,0 +1,45 @@
+{% load static %}
+{% load i18n %}
+<html>
+    <head>
+    {%  block head %}
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+        <script src="/static/admin/js/nav_sidebar.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    {% endblock %}
+        <title>
+            {% block title %}
+                visitorx Home
+            {% endblock %}
+        </title>
+    </head>
+    <body class=" dashboard">
+    {% block header %}
+            <div id="header">
+                <div id="branding">
+                    <h1 id="site-name">
+                        <a href="{% url 'home_link' %}">
+                            visitorx
+                        </a>
+                    </h1>
+                </div>
+            </div>
+        {% endblock %}
+        {% block content %}
+        <div class="content">
+            <h2>
+                {% if last_connection_time %}
+                    last_connection_time = {{ last_connection_time }}
+                {% else %}
+                    no last_connection_time
+
+                {% endif %}
+            </h2>
+        </div>
+        {% endblock %}
+    </body>
+</html>
+
